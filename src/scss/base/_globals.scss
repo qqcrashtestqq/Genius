@@ -1,0 +1,28 @@
+@use '../abstracts/functions' as function;
+
+html {
+  box-sizing: border-box;
+  font-size: toRem(12);
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: var(--color-white);
+  background-color: var(--color-bg);
+}
+

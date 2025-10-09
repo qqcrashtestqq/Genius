@@ -1,0 +1,38 @@
+@use '../../abstracts/functions' as *;
+@use '../../abstracts/mixins' as *;
+
+.button {
+  display: flex;
+  justify-content: center;
+
+  max-width: toRem(272);
+  width: 100%;
+  padding: responsive(10, 18);
+  border-radius: toRem(10);
+  text-align: center;
+  font-weight: 700;
+  font-size: toRem(16);
+  border: 1px solid var(--color-white);
+  transition: var(--transition);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-purple-primary);
+    border-color: var(--color-purple-primary);
+  }
+
+  &--purple {
+    background-color: var(--color-purple-primary);
+    border-color: var(--color-purple-primary);
+  }
+
+  &--yellow {
+    border-radius: toRem(10);
+    background-color: var(--color-yellow-accent);
+  }
+
+  &--blue {
+    border-radius: toRem(10);
+    background-color: var(--color-blue-accent);
+  }
+}

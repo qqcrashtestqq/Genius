@@ -1,0 +1,49 @@
+@use 'sass:math';
+
+@function toRem($px) {
+  $result: math.div($px, 16) * 1rem;
+
+  @return $result;
+}
+
+@function em($px, $current: 16) {
+  $result: math.div($px, $current) + em;
+
+  @return $result;
+}
+
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+// prettier-ignore
+@function responsive($min-size, $max-size, $min-width: 375, $max-width: 1440) {
+  $min-size-rem: toRem($min-size);
+  $max-size-rem: toRem($max-size);
+  $min-width-rem: toRem($min-width);
+  $max-width-rem: toRem($max-width);
+
+  // Расчет slope без единиц
+  $slope: math.div(($max-size-rem - $min-size-rem), ($max-width-rem - $min-width-rem));
+
+  // Расчет y-axis-intersection
+  $y-axis-intersection: $min-size-rem - $min-width-rem * $slope;
+
+  // Возвращаем значение с использованием clamp
+  $return-value:
+    clamp(
+      #{$min-size-rem},
+      #{$y-axis-intersection} + #{$slope} * 100vw,
+      #{$max-size-rem}
+    );
+
+  @return $return-value;
+}
+
+// opacity colors
+@function opacity-color($color, $opacity) {
+  @if str-index(#{$color}, 'var(') {
+    @return unquote('color-mix(in srgb, #{$color} #{$opacity}%, transparent)');
+  }
+  @return rgba($color, $opacity / 100);
+}

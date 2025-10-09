@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    @include('../components/_head.html', {title: 'AI MoneyMaker'})
+    <meta name="description" content="content" />
+  </head>
+  <body>
+    <div class="base-layout">
+      @include('../components/_header.html')
+
+      <main class="main">@include('../components/tariffs.html')</main>
+
+      @include('../components/_footer.html')
+    </div>
+
+    @include('../components/modals/_modal-template.html')
+    @include('../components/modals/_modal-template2.html')
+  </body>
+</html>
+

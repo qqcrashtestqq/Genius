@@ -1,0 +1,9 @@
+@use '../abstracts/functions' as *;
+
+.container {
+  margin: 0 auto;
+  padding: 0 toRem(15);
+  width: 100%;
+  max-width: toRem(1230);
+}
+

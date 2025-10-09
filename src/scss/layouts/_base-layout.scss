@@ -1,0 +1,12 @@
+@use '../abstracts/placeholders' as *;
+
+.base-layout {
+  @extend %flex-column;
+
+  overflow: hidden;
+  min-height: 100%;
+
+  .main {
+    flex: 1 1 auto;
+  }
+}

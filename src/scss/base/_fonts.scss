@@ -1,0 +1,8 @@
+@use '../abstracts/mixins' as mixin;
+
+// @include mixin.font-face(NAME, PATH, WEIGHT, STYLE);
+@include mixin.font-face('Gilroy', 'Gilroy-ExtraBold', 800);
+@include mixin.font-face('Gilroy', 'Gilroy-Bold', 700);
+@include mixin.font-face('Gilroy', 'Gilroy-Medium', 500);
+@include mixin.font-face('Gilroy', 'Gilroy-Regular', 400);
+

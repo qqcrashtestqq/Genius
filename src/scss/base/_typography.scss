@@ -1,0 +1,24 @@
+@use '../abstracts/functions' as *;
+
+.title {
+  font-weight: 700;
+  font-size: responsive(50, 70);
+
+  &--h2 {
+    font-size: responsive(32, 50);
+  }
+
+  &--h3 {
+    font-size: responsive(22, 32);
+  }
+
+  &--h4 {
+    font-size: responsive(16, 22);
+  }
+}
+
+.text {
+  font-weight: 500;
+  font-size: responsive(14, 16);
+  line-height: 1.2;
+}

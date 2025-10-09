@@ -1,0 +1,64 @@
+{
+  "name": "gulp",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp --production",
+    "html": "node-w3c-validator -f lint -evH -i public/**/*.html",
+    "format": "prettier ./ --write",
+    "zip": "gulp zip"
+  },
+  "browserslist": [
+    "last 5 versions"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "author": "s.vlad.web@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "browser-sync": "^2.29.3",
+    "del": "^6.1.1",
+    "editorconfig": "^2.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.3",
+    "gulp-csso": "^4.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-fonter": "^0.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^2.0.3",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-ttf2woff2": "^4.0.1",
+    "gulp-typograf": "^4.1.0",
+    "gulp-zip": "^5.1.0",
+    "node-w3c-validator": "^2.0.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.69.5",
+    "stylelint": "^14.14.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard-scss": "^6.0.0",
+    "stylelint-order": "^5.0.0",
+    "webpack": "^5.82.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "scroll-lock": "^2.1.5",
+    "swiper": "^11.2.10"
+  },
+  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
+}
