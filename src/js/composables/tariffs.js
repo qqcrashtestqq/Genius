@@ -7,18 +7,19 @@ function tariffsSlider() {
   const pagination = document.querySelector('.tariffs__pagination')
   const breakpoints = {
     0: {
-      slidesPerView: 'auto'
+      slidesPerView: 'auto',
+      spaceBetween: 15
     },
     992: {
-      spaceBetween: 30,
-      slidesPerView: 3
+      slidesPerView: 3,
+      spaceBetween: 30
     }
   }
 
   if (!slider) return
 
   const swiper = new Swiper(slider, {
-    loop: true,
+    // loop: true,
 
     pagination: {
       el: pagination

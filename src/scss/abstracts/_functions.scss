@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:string';
 
 @function toRem($px) {
   $result: math.div($px, 16) * 1rem;
@@ -42,8 +43,6 @@
 
 // opacity colors
 @function opacity-color($color, $opacity) {
-  @if str-index(#{$color}, 'var(') {
-    @return unquote('color-mix(in srgb, #{$color} #{$opacity}%, transparent)');
-  }
-  @return rgba($color, $opacity / 100);
+  @return string.unquote('color-mix(in srgb, #{$color} #{$opacity}%, transparent)');
 }
+

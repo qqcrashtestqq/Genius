@@ -2,6 +2,7 @@
 @use '../abstracts/functions' as *;
 
 .tariffs {
+  overflow: hidden;
   padding: responsive(20, 41) 0;
   background: url('../../img/static/decor.svg') top/cover no-repeat;
 
@@ -14,6 +15,7 @@
     span {
       color: var(--color-purple-primary);
     }
+    margin-bottom: responsive(20, 48);
   }
 
   &__slide {
@@ -46,11 +48,27 @@
         color: var(--color-bg);
         background-color: var(--color-yellow-accent);
       }
+
+      .tariffs__list--decor {
+        .tariffs__item {
+          &::before {
+            background-color: var(--color-yellow-accent);
+          }
+        }
+      }
     }
     &--purple {
       border-color: var(--color-purple-primary);
       .tariffs__head {
         background-color: var(--color-purple-primary);
+      }
+
+      .tariffs__list--decor {
+        .tariffs__item {
+          &::before {
+            background-color: var(--color-purple-primary);
+          }
+        }
       }
     }
   }
@@ -60,7 +78,34 @@
     font-weight: 700;
     font-size: toRem(30);
     line-height: 120%;
-    padding: toRem(21) 0 toRem(18);
+    padding: responsive(15, 21) 0 responsive(15, 18);
+  }
+
+  &__dop {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(24);
+    margin-top: toRem(16);
+    padding-top: responsive(20, 40);
+    border-top: toRem(1) solid opacity-color(var(--color-white), 30);
+  }
+
+  &__pagination {
+    position: static;
+    margin-top: toRem(30);
+
+    .swiper-pagination-bullet {
+      width: toRem(10);
+      height: toRem(10);
+      background-color: var(--color-purple-light);
+      opacity: 1;
+      margin: 0 toRem(6);
+      transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--color-yellow-accent);
+    }
   }
 
   &__info {
@@ -76,6 +121,9 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
     list-style-type: disc;
 
     &--decor {
@@ -84,16 +132,17 @@
       .tariffs__item {
         position: relative;
         margin-left: toRem(20);
+
         &::before {
           position: absolute;
           content: '';
           top: 50%;
-          transform: rotateY(-50%);
+          transform: translateY(-50%);
           left: toRem(-20);
           width: toRem(10);
           height: toRem(10);
           border-radius: toRem(2);
-          background-color: red;
+          background-color: transparent;
         }
       }
     }
@@ -105,9 +154,21 @@
     line-height: 1.4;
     margin-left: toRem(25);
     color: opacity-color(var(--color-white), 70);
+  }
+}
 
-    &:not(:last-child) {
-      padding-bottom: toRem(20);
+@include mq('lg') {
+  .tariffs {
+    &__swiper {
+      overflow: visible;
+    }
+
+    &__slide {
+      width: toRem(300);
+    }
+
+    &__info {
+      padding: toRem(15);
     }
   }
 }
