@@ -1,0 +1,206 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.program {
+  padding: responsive(36, 40) 0;
+  background-color: var(--color-white);
+  color: var(--color-black);
+
+  &__block {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: responsive(24, 40) responsive(16, 20);
+    transition: var(--transition);
+    &:not(:last-child) {
+      border-bottom: toRem(1) solid #00000033;
+    }
+    &-title {
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    &.active {
+      gap: responsive(16, 40);
+
+      .program__block {
+        background-color: var(--color-purple-primary);
+      }
+
+      .program__info {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .program__element-svg {
+        color: var(--color-white);
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__element {
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: flex-start;
+    gap: responsive(30, 116);
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: responsive(80, 120);
+      height: responsive(80, 120);
+      border-radius: 50%;
+      font-weight: 500;
+      font-size: responsive(14, 16);
+      line-height: 1.2;
+      color: var(--color-white);
+      border: toRem(1) solid transparent;
+      background-color: var(--color-purple-primary);
+      transition: var(--transition);
+
+      &:hover {
+        background-color: var(--color-yellow-accent);
+      }
+
+      &.active {
+        border-color: opacity-color(var(--color-white), 30);
+        background-color: opacity-color(var(--color-white), 30);
+      }
+    }
+
+    &-svg {
+      width: toRem(16);
+      height: toRem(16);
+      transition: var(--transition);
+    }
+  }
+
+  &__learning {
+    grid-column: 1 / 2;
+    margin-top: toRem(-37);
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(18);
+    max-width: toRem(477);
+    height: fit-content;
+    width: 100%;
+    padding: toRem(29);
+    border-radius: toRem(20);
+    background-color: var(--color-purple-light);
+
+    &-title {
+      font-weight: 700;
+      font-size: toRem(22);
+      line-height: 1.2;
+    }
+  }
+
+  &__lesson {
+    display: flex;
+    align-items: center;
+    gap: toRem(6);
+    font-size: toRem(16);
+    &-number {
+      font-weight: 700;
+
+      line-height: 130%;
+      color: var(--color-purple-primary);
+    }
+
+    &-text {
+      font-weight: 500;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      max-height 0.6s ease,
+      opacity 0.4s ease,
+      visibility 0.4s ease;
+  }
+
+  &__descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: responsive(23, 40);
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(16);
+    font-weight: 700;
+
+    &-title {
+      font-size: toRem(22);
+      line-height: 1.2;
+    }
+
+    &-text {
+      font-size: toRem(16);
+      line-height: 1.4;
+    }
+  }
+
+  &__square {
+    display: flex;
+    flex-direction: column;
+    gap: responsive(40, 48);
+  }
+
+  &__quarter {
+    display: flex;
+    flex-direction: column;
+    gap: responsive(12, 16);
+
+    &-title {
+      font-weight: 700;
+      font-size: toRem(16);
+      line-height: 1.2;
+
+      color: var(--color-purple-primary);
+    }
+  }
+  &__roll {
+    display: flex;
+    flex-direction: column;
+    gap: responsive(10, 24);
+
+    &-item {
+      position: relative;
+      font-weight: 500;
+      font-size: toRem(16);
+      line-height: 1.4;
+      padding-left: toRem(22);
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        left: toRem(0);
+        width: toRem(10);
+        height: toRem(10);
+        border-radius: toRem(2);
+
+        background-color: var(--color-purple-primary);
+      }
+    }
+  }
+}

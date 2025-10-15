@@ -1,0 +1,35 @@
+@use '../../abstracts/functions' as *;
+@use '../../abstracts/mixins' as *;
+
+.learning {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: responsive(9, 12);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: toRem(12);
+    max-width: toRem(185);
+    padding: toRem(6) toRem(8);
+    border: toRem(1) solid #00000033;
+    border-radius: toRem(40);
+    &-icon {
+      width: toRem(24);
+      height: toRem(24);
+      color: var(--color-purple-primary);
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+  }
+}
+
+@include mq('lg') {
+  .learning {
+  }
+}

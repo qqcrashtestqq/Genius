@@ -8,7 +8,9 @@
     <div class="base-layout">
       @include('../components/_header.html')
 
-      <main class="main">@include('../components/tariffs.html')</main>
+      <main class="main">
+        @include('../components/program.html') @include('../components/tariffs.html')
+      </main>
 
       @include('../components/_footer.html')
     </div>
