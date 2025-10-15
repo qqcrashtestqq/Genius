@@ -4,6 +4,7 @@
 .header {
   padding: responsive(15, 20) 0 responsive(15, 36);
   position: relative;
+  background-color: var(--color-black);
   &__logo {
     display: block;
     max-width: responsive(50, 96);

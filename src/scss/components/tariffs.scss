@@ -5,6 +5,7 @@
   overflow: hidden;
   padding: responsive(20, 41) 0;
   background: url('../../img/static/decor.svg') top/cover no-repeat;
+  background-color: var(--color-black);
 
   &__title {
     display: flex;

@@ -1,0 +1,145 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.start {
+  position: relative;
+  padding: responsive(20, 47) responsive(20, 43);
+  height: toRem(661);
+  background-color: var(--color-black);
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__box {
+    max-width: toRem(412);
+    width: 100%;
+    &-text {
+      font-weight: 400;
+      font-size: responsive(14, 20);
+      line-height: 1.5;
+      span {
+        font-weight: 700;
+        color: var(--color-purple-primary);
+      }
+    }
+  }
+
+  &__counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: toRem(20);
+    padding: responsive(24, 34) responsive(24, 30);
+    backdrop-filter: blur(toRem(38));
+    border-radius: toRem(20);
+    font-weight: 700;
+
+    &-title {
+      max-width: toRem(91);
+      width: 100%;
+      text-align: center;
+      font-size: responsive(14, 19);
+      line-height: 114.99999999999999%;
+    }
+
+    &-value {
+      font-weight: 900;
+      font-size: responsive(90, 142);
+      // line-height: 20.02px;
+      color: var(--color-purple-primary);
+    }
+
+    &-date {
+      font-size: responsive(20, 29);
+      line-height: 20.02px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: responsive(20, 30);
+    max-width: toRem(302);
+    width: 100%;
+
+    &-title {
+      font-weight: 700;
+      font-size: responsive(16, 22);
+      line-height: 1.5;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(16);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(7);
+    position: relative;
+    padding-left: toRem(24);
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: toRem(7);
+      left: 0;
+      width: toRem(10);
+      height: toRem(10);
+      border-radius: 50%;
+      background-color: var(--color-purple-primary);
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: toRem(16);
+      line-height: 1.5;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(12);
+  }
+
+  &__image {
+    max-width: toRem(187);
+    width: 100%;
+
+    img {
+      width: fit-content;
+    }
+  }
+}
+
+@include mq('lg') {
+  .start {
+    &__box {
+      max-width: none;
+    }
+
+    &__block {
+      grid-template-columns: 1fr;
+      gap: toRem(20);
+    }
+
+    &__info {
+      max-width: none;
+    }
+  }
+}
